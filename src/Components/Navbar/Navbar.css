@@ -1,0 +1,47 @@
+.flex-div {
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
+  margin: 5px 10px;
+  padding: 2px 7px;
+  height: 35px;
+}
+.nav-left {
+  display: flex;
+  justify-items: center;
+  gap: 10px;
+}
+.menu-icon {
+  margin: auto;
+  max-height: 15px;
+}
+.nav-midl {
+  display: block;
+}
+.search-box {
+  display: flex;
+  justify-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+}
+.search {
+  margin: auto;
+  width: 400px;
+  height: 20px;
+  border-radius: 30px;
+  border: none;
+  outline: 0;
+}
+.search_icon {
+  width: 15px;
+  height: 15px;
+  margin: auto;
+}
+.nav-right {
+  gap: 10px;
+}
+.profile_icon {
+  border-radius: 50%;
+}
