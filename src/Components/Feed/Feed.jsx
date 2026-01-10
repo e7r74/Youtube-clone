@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import './Feed.css'
 import { Link } from 'react-router-dom' // Убрал лишний импорт data
-import { API_KEY } from '../../data'
+import { API_KEY, value_converter } from '../../data'
+import moment from 'moment'
 
 // ДОБАВИЛИ ФИГУРНЫЕ СКОБКИ ВОКРУГ category
 const Feed = ({ category }) => {
@@ -30,7 +31,9 @@ const Feed = ({ category }) => {
             <img src={item.snippet.thumbnails.medium.url} alt="" />
             <h2>{item.snippet.title}</h2>
             <h3>{item.snippet.channelTitle}</h3>
-            <p>{item.statistics.viewCount} views &bull; 8 hours</p>
+            <p>
+              {value_converter(item.statistics.viewCount)} views &bull; {moment(item.snippet.publishedAt).fromNow()}
+            </p>
           </Link>
         )
       })}

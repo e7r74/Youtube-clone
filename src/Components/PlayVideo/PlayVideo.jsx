@@ -7,10 +7,17 @@ import share from '../../assets/share.png'
 import save from '../../assets/save.png'
 import jack from '../../assets/jack.png'
 import userProfile from '../../assets/user_profile.jpg'
-export const PlayVideo = () => {
+export const PlayVideo = ({ videoId }) => {
   return (
     <div className="play-video">
-      <video src={video1} controls autoPlay muted></video>
+      <iframe
+        width="1020"
+        height="574"
+        src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerPolicy="strict-origin-when-cross-origin"
+        allowFullScreen></iframe>
       <h3>Just best trevel</h3>
       <div className="play-video-info">
         <p>435 views &bull; 8 hours ago</p>

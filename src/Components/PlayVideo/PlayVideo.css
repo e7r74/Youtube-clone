@@ -2,7 +2,7 @@
   flex-basis: 70%;
   margin-top: 20px;
 }
-.play-video video {
+.play-video iframe {
   width: 100%;
 }
 .play-video h3 {

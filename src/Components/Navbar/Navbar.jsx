@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './Navbar.css'
 import youtube_icon_icon from '../../assets/youtube_icon.png'
 import menu_icon from '../../assets/menu.png'
@@ -12,13 +13,10 @@ const Navbar = ({ setSidebar }) => {
   return (
     <nav className="flex-div">
       <div className="nav-left flex-div">
-        <img
-          className="menu-icon"
-          onClick={() => setSidebar((prev) => !prev)}
-          src={menu_icon}
-          alt=""
-        />
-        <img className="loga" src={youtube_icon_icon} alt="" />
+        <img className="menu-icon" onClick={() => setSidebar((prev) => !prev)} src={menu_icon} alt="" />
+        <Link to="/">
+          <img className="loga" src={youtube_icon_icon} alt="" />
+        </Link>
       </div>
       <div className="nav-midl flex-div">
         <div className="search-box flex-dev">
