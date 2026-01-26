@@ -2,13 +2,18 @@ import React, { useState } from 'react'
 import './Home.css'
 import Sidebar from '../../Components/Sidebar/Sidebar'
 import Feed from '../../Components/Feed/Feed'
-const Home = ({ sidebar }) => {
+
+const Home = ({ sidebar, setSidebar }) => {
   const [category, setCategory] = useState(0)
 
   return (
     <div className="home">
-      <Sidebar sidebar={sidebar} category={category} setCategory={setCategory} />
-      <div className="continer">
+      <Sidebar sidebar={sidebar} category={category} setCategory={setCategory} setSidebar={setSidebar} />
+
+      {/* Оверлей: появляется только когда sidebar true на мобилках */}
+      {sidebar && <div className="dark-overlay" onClick={() => setSidebar(false)}></div>}
+
+      <div className={`continer ${sidebar ? '' : 'large-container'}`}>
         <Feed category={category} />
       </div>
     </div>

@@ -5,13 +5,13 @@ import Home from './Pages/Home/Home'
 import Video from './Pages/Video/Video'
 
 const App = () => {
-  const [sidebar, setSidebar] = useState(true)
+  const [sidebar, setSidebar] = useState(false)
   return (
     <div>
       <Navbar setSidebar={setSidebar} />
       <Routes>
-        <Route path="/" element={<Home sidebar={sidebar} />} />
-        <Route path="/video/:categaryID/:videoId" element={<Video />} />
+        <Route path="/" element={<Home sidebar={sidebar} setSidebar={setSidebar} />} />
+        <Route path="/video/:categoryId/:videoId" element={<Video />} />
       </Routes>
     </div>
   )

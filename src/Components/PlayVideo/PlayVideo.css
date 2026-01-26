@@ -72,6 +72,7 @@
   font-size: 14px;
   color: #555;
   margin-bottom: 5px;
+  margin-top: 10px;
 }
 .video-desc h4 {
   font-size: 14px;
@@ -97,7 +98,7 @@
   font-size: 12px;
   font-weight: 500;
   color: #555;
-  margin-left: 20px;
+  margin-left: 5px;
 }
 .comment-actions {
   display: flex;
@@ -114,4 +115,23 @@
   margin-right: 12px;
   color: #555;
   font-weight: 400;
+}
+@media (max-width: 900px) {
+  .play-video {
+    flex-basis: 100%;
+  }
+  .play-video iframe {
+    width: 100%;
+    height: auto;
+    /* Добавляем стандартное соотношение сторон YouTube */
+    aspect-ratio: 16 / 9;
+  }
+  .video-desc {
+    margin-left: 0;
+  }
+  .play-video .play-video-info span {
+    margin: 0;
+    margin-left: 15px;
+    margin-top: 15px;
+  }
 }

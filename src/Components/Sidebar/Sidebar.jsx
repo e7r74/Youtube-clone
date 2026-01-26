@@ -14,83 +14,59 @@ import tom from '../../assets/tom.png'
 import megan from '../../assets/megan.png'
 
 import './Sidebar.css'
-const Sidebar = ({ sidebar, category, setCategory }) => {
+
+// ИСПРАВЛЕНО: Убрана лишняя фигурная скобка перед props
+const Sidebar = ({ sidebar, category, setCategory, setSidebar }) => {
+  // Функция для смены категории и закрытия меню на мобилках
+  const handleCategoryClick = (id) => {
+    setCategory(id)
+    // Проверяем ширину экрана: если мобилка, закрываем сайдбар
+    if (window.innerWidth <= 900) {
+      setSidebar(false)
+    }
+  }
+
   return (
-    <div className={`sidebar ${sidebar ? '' : 'sidebar-small'}`}>
+    <div className={`sidebar ${sidebar ? '' : 'sidebar-small'} ${sidebar ? 'active-mobile' : ''}`}>
       <div className="sorcut-links">
-        <div
-          className={`side-link ${category === 0 ? 'active' : ''}`}
-          onClick={() => {
-            setCategory(0)
-          }}>
+        {/* ВЕЗДЕ НИЖЕ ИСПОЛЬЗУЕМ handleCategoryClick вместо прямого setCategory */}
+        <div className={`side-link ${category === 0 ? 'active' : ''}`} onClick={() => handleCategoryClick(0)}>
           <img src={home_icon} alt="" />
           <p>Home</p>
         </div>
-        <div
-          className={`side-link ${category === 20 ? 'active' : ''}`}
-          onClick={() => {
-            setCategory(20)
-          }}>
+        <div className={`side-link ${category === 20 ? 'active' : ''}`} onClick={() => handleCategoryClick(20)}>
           <img src={game_icon} alt="" />
           <p>Gaming</p>
         </div>
-        <div
-          className={`side-link ${category === 2 ? 'active' : ''}`}
-          onClick={() => {
-            setCategory(2)
-          }}>
+        <div className={`side-link ${category === 2 ? 'active' : ''}`} onClick={() => handleCategoryClick(2)}>
           <img src={automobiles} alt="" />
           <p>Automobiles</p>
         </div>
-        <div
-          className={`side-link ${category === 17 ? 'active' : ''}`}
-          onClick={() => {
-            setCategory(17)
-          }}>
+        <div className={`side-link ${category === 17 ? 'active' : ''}`} onClick={() => handleCategoryClick(17)}>
           <img src={sports} alt="" />
           <p>Sports</p>
         </div>
-        <div
-          className={`side-link ${category === 24 ? 'active' : ''}`}
-          onClick={() => {
-            setCategory(24)
-          }}>
+        <div className={`side-link ${category === 24 ? 'active' : ''}`} onClick={() => handleCategoryClick(24)}>
           <img src={entertainment} alt="" />
           <p>Entertainment</p>
         </div>
-        <div
-          className={`side-link ${category === 28 ? 'active' : ''}`}
-          onClick={() => {
-            setCategory(28)
-          }}>
+        <div className={`side-link ${category === 28 ? 'active' : ''}`} onClick={() => handleCategoryClick(28)}>
           <img src={tech} alt="" />
           <p>Technology</p>
         </div>
-        <div
-          className={`side-link ${category === 10 ? 'active' : ''}`}
-          onClick={() => {
-            setCategory(10)
-          }}>
+        <div className={`side-link ${category === 10 ? 'active' : ''}`} onClick={() => handleCategoryClick(10)}>
           <img src={music} alt="" />
           <p>Music</p>
         </div>
-        <div
-          className={`side-link ${category === 22 ? 'active' : ''}`}
-          onClick={() => {
-            setCategory(22)
-          }}>
+        <div className={`side-link ${category === 22 ? 'active' : ''}`} onClick={() => handleCategoryClick(22)}>
           <img src={blogs} alt="" />
           <p>Blogs</p>
         </div>
-        <div
-          className={`side-link ${category === 25 ? 'active' : ''}`}
-          onClick={() => {
-            setCategory(25)
-          }}>
+        <div className={`side-link ${category === 25 ? 'active' : ''}`} onClick={() => handleCategoryClick(25)}>
           <img src={news} alt="" />
           <p>News</p>
         </div>
-        <hr />
+        <hr style={{ width: '100%' }} />
       </div>
       <div className="subscribed-list">
         <h3>Subscribed</h3>

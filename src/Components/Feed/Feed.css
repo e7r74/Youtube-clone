@@ -28,3 +28,8 @@
   font-weight: 400;
   color: #555;
 }
+@media (max-width: 500px) {
+  .feed {
+    grid-template-columns: 1fr; /* На маленьких телефонах — строго 1 видео в ряд */
+  }
+}

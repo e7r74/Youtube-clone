@@ -1,7 +1,7 @@
-export const API_KEY = 'AIzaSyAVx_khaXp5LLcTB-GHuRxhiVY-lku-9FE'
-
+// export const API_KEY = 'AIzaSyAVx_khaXp5LLcTB-GHuRxhiVY-lku-9FE'
+export const API_KEY = 'AIzaSyCl6CjymMCvXM0Az7kO3MiYra7mUEBlcSI'
 export const value_converter = (value) => {
-  if (value >= 100000) {
+  if (value >= 1000000) {
     return Math.floor(value / 1000000) + 'M'
   } else if (value >= 1000) {
     return Math.floor(value / 1000) + 'k'
